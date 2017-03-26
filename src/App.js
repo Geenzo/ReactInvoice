@@ -14,6 +14,7 @@ class App extends Component {
       Phone: 'Your Phone Number',
       Email: 'Your Email Address',
       Website: 'Your Website',
+      YourName: 'Your Name',
     };
   }
 
