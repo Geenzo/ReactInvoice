@@ -1,10 +1,15 @@
 .HeaderBar {
   background-color: #2A77A2;
-  display: fixed;
-  height:5%;
-  margin: 0;
+  position: fixed;
+  height:100%;
+  top:0;
+  bottom:0;
+  width:200px;
+  padding: 5px;
+  color: #fff;
 }
 
 .HeaderTitle {
-  text-align: left;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
 }

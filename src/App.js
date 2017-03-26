@@ -5,11 +5,26 @@ import Lineitems from './components/Lineitems.js';
 import Footer from './components/Footer.js';
 import './css/App.css';
 
+
+
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      Phone: 'Your Phone Number',
+      Email: 'Your Email Address',
+      Website: 'Your Website',
+    };
+  }
+
+  changeInfo(YourName){
+    this.setState({YourName});
+  }
+
   render() {
     return (
       <div className="App container">
-        <YourDetails />
+        <YourDetails changeInfo={this.changeInfo.bind(this)} YourName={this.state.YourName}/>
         <ProjectDetails />
         <Lineitems />
         <Footer />
