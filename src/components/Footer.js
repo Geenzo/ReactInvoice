@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { RIEToggle, RIEInput, RIETextArea, RIENumber, RIETags, RIESelect } from 'riek';
 import '../css/Footer.css';
 
 class Footer extends Component {

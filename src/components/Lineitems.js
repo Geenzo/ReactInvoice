@@ -1,7 +1,33 @@
 import React, { Component } from 'react';
+import { RIEToggle, RIEInput, RIETextArea, RIENumber, RIETags, RIESelect } from 'riek';
 import '../css/Lineitems.css';
 
 class Lineitems extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      Task: "Name of Task",
+      BriefDescription: "Brief Description of Task",
+      Deliverable: "Deliverable Name",
+      Hours: "0",
+      Discount: "0",
+    }
+  }
+
+  changeState = (newState) => {
+  this.setState(newState);
+  };
+
+  virtualServerCallback = (newState) => {
+  if (this.state.simulateXHR) {
+  window.setTimeout(function() {
+    this.changeState(newState);
+  }.bind(this), this.state.XHRDelay);
+  } else {
+  this.changeState(newState);
+  }
+  };
+
   render() {
     return (
       <div className="Lineitems">
@@ -22,33 +48,43 @@ class Lineitems extends Component {
 
         <div className="row">
           <div className="col-sm-3">
-            <input type="text" className="form-control" placeholder="Task"></input>
-            <textarea type="text" className="form-control" placeholder="Brief Description"></textarea>
+          <p>
+            <RIEInput value={this.state.Task}
+                      change={this.virtualServerCallback}
+                      propName="Task"/>
+          </p>
+          <p>
+            <RIETextArea
+            value={this.state.BriefDescription}
+            change={this.virtualServerCallback}
+            propName="BriefDescription"/>
+          </p>
           </div>
           <div className="col-sm-4">
             <div className="row">
-              <input type="text" className="form-control col-sm-2" placeholder="Description"></input>
+              <RIEInput value={this.state.Deliverable}
+                        change={this.virtualServerCallback}
+                        propName="Deliverable"/>
               <button type="text" className="btn btn-danger col-sm-2">-</button>
             </div>
             <button type="text" className="btn btn-primary">Add</button>
           </div>
           <div className="col-sm-2">
             <div className="row">
-              <div className="col-sm-6">
-                <input type="number" className="form-control col-sm-6"></input>
-              </div>
-              <div className="col-sm-6">
-              <input type="number" className="form-control col-sm-6"></input>
-              </div>
+                <RIENumber value={this.state.Hours}
+                          change={this.virtualServerCallback}
+                          propName="Hours"/>
+                <span> Hours</span>
             </div>
             <div className="row">
-              <label>Hours</label>
-              <label>Discount</label>
+              <RIENumber value={this.state.Discount}
+                        change={this.virtualServerCallback}
+                        propName="Discount"/>
+              <span> % Discount</span>
             </div>
           </div>
           <div className="col-sm-2">
-            <span>$placeholder$</span>
-            <textarea type="text" className="form-control" placeholder="Brief Description"></textarea>
+            <span>$placeholder$ for price state</span>
           </div>
           <div className="col-sm-1">
             <button type="text" className="btn btn-primary col-sm-2">&uarr;</button>

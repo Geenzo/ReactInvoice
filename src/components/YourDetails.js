@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
+import { RIEToggle, RIEInput, RIETextArea, RIENumber, RIETags, RIESelect } from 'riek';
 import '../css/YourDetails.css';
 
 
 class YourDetails extends Component {
-  handleChange(e){
-    const YourName = e.target.value;
-    this.props.changeInfo(YourName);
+  constructor(props){
+    super(props);
+    this.state = {
+      YourName: "Your Name",
+      Phone: "Phone Number",
+      Email: "Email",
+      Website: "Website",
+      CreateDate: "DD-MM-YYYY",
+    }
   }
 
-  ComponentDidMount(){
-    console.log('This Has Changed');
+  changeState = (newState) => {
+  this.setState(newState);
+  };
+
+  virtualServerCallback = (newState) => {
+  if (this.state.simulateXHR) {
+  window.setTimeout(function() {
+    this.changeState(newState);
+  }.bind(this), this.state.XHRDelay);
+  } else {
+  this.changeState(newState);
   }
+  };
 
   render() {
     return (
@@ -21,29 +38,60 @@ class YourDetails extends Component {
             </div>
 
             <div className="col-sm-7 YourContactDetails">
+            <h1>
+            <RIEInput value={this.state.YourName}
+                      change={this.virtualServerCallback}
+                      propName="YourName">
+            </RIEInput>
+            </h1>
               <div className="col-sm-6">
-                <h1>{this.props.YourName}</h1>
                 <div className="row">
-                  <p >Phone Number: </p><span>{this.props.Phone}</span>
+                  <p >Phone Number: </p>
                 </div>
                 <div className="row">
-                  <p >Email: </p><span>{this.props.Email}</span>
+                  <p >Email: </p>
                 </div>
                 <div className="row">
-                  <p >Website: </p><span>{this.props.Website}</span>
+                  <p >Website: </p>
                 </div>
               </div>
               <div className="col-sm-6">
-                <input type="text" className="form-control" placeholder='' onChange={this.handleChange.bind(this)} value={this.props.YourName}></input>
-                <input type="text" className="form-control" placeholder=''></input>
-                <input type="text" className="form-control" placeholder=''></input>
+                <div className="row">
+                <p>
+                  <RIEInput value={this.state.Phone}
+                            change={this.virtualServerCallback}
+                            propName="Phone">
+                  </RIEInput>
+                </p>
+                </div>
+                <div className="row">
+                <p>
+                  <RIEInput value={this.state.Email}
+                            change={this.virtualServerCallback}
+                            propName="Email">
+                  </RIEInput>
+                </p>
+                </div>
+                <div className="row">
+                <p>
+                  <RIEInput value={this.state.Website}
+                            change={this.virtualServerCallback}
+                            propName="Website">
+                  </RIEInput>
+                </p>
+                </div>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-sm-4">
-              <input type="text" className="form-control" placeholder=''></input>
-              <span>Date created : DD-MM-YYYY</span>
+              <p>Date created : </p>
+              <p>
+                <RIEInput value={this.state.CreateDate}
+                          change={this.virtualServerCallback}
+                          propName="CreateDate">
+                </RIEInput>
+              </p>
             </div>
           </div>
       </div>

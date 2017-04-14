@@ -3,6 +3,7 @@ import YourDetails from './components/YourDetails.js';
 import ProjectDetails from './components/ProjectDetails.js';
 import Lineitems from './components/Lineitems.js';
 import Footer from './components/Footer.js';
+import { RIEToggle, RIEInput, RIETextArea, RIENumber, RIETags, RIESelect } from 'riek';
 import './css/App.css';
 
 
