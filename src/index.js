@@ -7,6 +7,7 @@ import '../bower_components/bootstrap/dist/css/bootstrap.min.css'
 import '../bower_components/jquery/dist/jquery.min.js'
 import './index.css';
 
+
 ReactDOM.render(
   <div>
     <HeaderBar />

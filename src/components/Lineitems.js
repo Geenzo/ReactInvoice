@@ -65,9 +65,7 @@ class Lineitems extends Component {
               <RIEInput value={this.state.Deliverable}
                         change={this.virtualServerCallback}
                         propName="Deliverable"/>
-              <button type="text" className="btn btn-danger col-sm-2">-</button>
             </div>
-            <button type="text" className="btn btn-primary">Add</button>
           </div>
           <div className="col-sm-2">
             <div className="row">
@@ -87,9 +85,7 @@ class Lineitems extends Component {
             <span>$placeholder$ for price state</span>
           </div>
           <div className="col-sm-1">
-            <button type="text" className="btn btn-primary col-sm-2">&uarr;</button>
-            <button type="text" className="btn btn-primary col-sm-2">&darr;</button>
-            <button type="text" className="btn btn-danger col-sm-2">-</button>
+              <button type="text" className="btn btn-danger col-sm-2">-</button>
           </div>
         </div>
       </div>
