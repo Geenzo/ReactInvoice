@@ -84,9 +84,10 @@ class Lineitems extends Component {
           <div className="col-sm-2">
             <span>$placeholder$ for price state</span>
           </div>
+          {/* Button for deleting line item - commenting out until I get it fully functional
           <div className="col-sm-1">
-              <button type="text" className="btn btn-danger col-sm-2">-</button>
-          </div>
+          <button type="text" className="btn btn-danger col-sm-2">-</button>
+          </div> */}
         </div>
       </div>
     );
