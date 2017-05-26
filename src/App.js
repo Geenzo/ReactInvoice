@@ -16,8 +16,8 @@ class App extends Component {
     };
   }
 
-  updateRate(shared_value){
-  	this.setState({hourly_rate: shared_value})
+  updateRate(){
+  	this.setState({hourly_rate: ''})
   }
 
   render() {
