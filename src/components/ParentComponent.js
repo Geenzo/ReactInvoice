@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { RIEToggle, RIEInput, RIETextArea, RIENumber, RIETags, RIESelect } from 'riek';
 import '../css/ParentComponent.css';
+import { Button, Col } from 'react-bootstrap';
 
 class ParentComponent extends Component {
   constructor(props){
@@ -32,9 +33,14 @@ class ParentComponent extends Component {
     return (
       <div className="Lineitems">
         <div className="row">
-          <a href="#" onClick={this.props.addChild}><button onClick={this.props.onAddChild} type="text" className="btn btn-primary addbutton">Add</button></a>
+          <Col xs={12} md={8}>
+          <a href="#" onClick={this.props.addChild}><Button onClick={this.props.onAddChild} bsStyle="primary">Add</Button></a>
+          <br />
+          </Col>
+          <div className="row">
             <div id="children-pane">
                 {this.props.children}
+            </div>
             </div>
         </div>
       </div>
