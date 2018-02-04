@@ -31,14 +31,14 @@ class ProjectDetails extends Component {
       <div className="ProjectDetails">
         <div className="row">
           <div className="col-sm-3">
-            <label>Project Name:</label>
+            <label>Project Name:</label><br />
             <RIEInput value={this.state.ProjectName}
                       change={this.virtualServerCallback}
                       propName="ProjectName">
             </RIEInput>
           </div>
           <div className="col-sm-3">
-            <label>Issued To:</label>
+            <label>Issued To:</label><br />
             <RIEInput value={this.state.ProjectContact}
                       change={this.virtualServerCallback}
                       propName="ProjectContact">

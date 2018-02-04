@@ -7,10 +7,10 @@ class YourDetails extends Component {
   constructor(props){
     super(props);
     this.state = {
-      YourName: "Your Name",
-      Phone: "Phone Number",
-      Email: "Email",
-      Website: "Website",
+      YourName: "{Enter Your Name}",
+      Phone: "{Enter your Phone Number}",
+      Email: "{Enter your Email}",
+      Website: "{Enter your Website address}",
       CreateDate: "DD-MM-YYYY",
     }
   }
@@ -49,14 +49,6 @@ class YourDetails extends Component {
                   <p >Phone Number: </p>
                 </div>
                 <div className="row">
-                  <p >Email: </p>
-                </div>
-                <div className="row">
-                  <p >Website: </p>
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <div className="row">
                 <p>
                   <RIEInput value={this.state.Phone}
                             change={this.virtualServerCallback}
@@ -65,12 +57,18 @@ class YourDetails extends Component {
                 </p>
                 </div>
                 <div className="row">
+                  <p >Email: </p>
+                </div>
+                <div className="row">
                 <p>
                   <RIEInput value={this.state.Email}
                             change={this.virtualServerCallback}
                             propName="Email">
                   </RIEInput>
                 </p>
+                </div>
+                <div className="row">
+                  <p >Website: </p>
                 </div>
                 <div className="row">
                 <p>
